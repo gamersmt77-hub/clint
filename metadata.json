@@ -1,0 +1,6 @@
+{
+  "name": "NEXT GEN COMPUTER Patna",
+  "description": "Premium Laptop & Computer Sales, Chip-Level Repairing, Custom PC Builder, and Tech Accessories Hub in Fraser Road, Patna.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
