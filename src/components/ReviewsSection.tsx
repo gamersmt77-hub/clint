@@ -56,12 +56,12 @@ export const ReviewsSection: React.FC = () => {
 
                 {/* Service Tag */}
                 <div className="text-[10px] font-mono font-bold text-blue-400 bg-blue-950/40 px-2.5 py-0.5 rounded-full border border-blue-900/60 inline-block">
-                  {rev.service}
+                  {rev.service || rev.serviceUsed || "Hardware Service"}
                 </div>
 
                 {/* Review Text */}
                 <p className="text-xs text-gray-300 leading-relaxed italic">
-                  "{rev.text}"
+                  "{rev.text || rev.comment}"
                 </p>
               </div>
 
@@ -95,6 +95,8 @@ export const ReviewsSection: React.FC = () => {
           <div className="space-y-3">
             {FAQS.map((faq, idx) => {
               const isOpen = openFaqIdx === idx;
+              const questionText = faq.question || (faq as any).q;
+              const answerText = faq.answer || (faq as any).a;
               return (
                 <div 
                   key={idx}
@@ -105,12 +107,12 @@ export const ReviewsSection: React.FC = () => {
                     className="w-full p-4 text-left flex items-center justify-between gap-4 font-bold text-sm text-gray-100 hover:text-blue-400 transition-colors"
                     id={`faq-btn-${idx}`}
                   >
-                    <span>{faq.q}</span>
+                    <span>{questionText}</span>
                     {isOpen ? <ChevronUp className="w-4 h-4 text-blue-400 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />}
                   </button>
                   {isOpen && (
                     <div className="px-4 pb-4 pt-1 text-xs text-gray-300 leading-relaxed border-t border-white/5 bg-[#0c0c0c] animate-in fade-in duration-200">
-                      {faq.a}
+                      {answerText}
                     </div>
                   )}
                 </div>

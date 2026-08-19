@@ -9,13 +9,13 @@ import {
   Tag, 
   Cpu, 
   Battery, 
-  HardDrive,
-  Gamepad2,
-  Zap,
-  Star,
-  ArrowRight,
-  Filter,
-  CheckCircle2
+  HardDrive, 
+  Gamepad2, 
+  Zap, 
+  Star, 
+  ArrowRight, 
+  Filter, 
+  CheckCircle2 
 } from "lucide-react";
 import { ProductItem } from "../types";
 
@@ -44,10 +44,11 @@ export const RefurbishedLaptops: React.FC<RefurbishedLaptopsProps> = ({
   // Filtering products based on category and search query
   const filteredProducts = ALL_STORE_PRODUCTS.filter((prod) => {
     const matchesCategory = selectedCategory === "all" || prod.category === selectedCategory;
+    const specsList = prod.specs || [];
     const matchesSearch = !searchQuery.trim() || 
       prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       prod.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      prod.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+      specsList.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -201,7 +202,7 @@ export const RefurbishedLaptops: React.FC<RefurbishedLaptopsProps> = ({
 
                     {/* Key Technical Specs */}
                     <div className="space-y-1 bg-[#090909] p-2.5 rounded-2xl border border-white/5">
-                      {prod.specs.slice(0, 3).map((spec, i) => (
+                      {(prod.specs || []).slice(0, 3).map((spec, i) => (
                         <div key={i} className="flex items-center gap-1.5 text-[11px] text-gray-300">
                           <Check className="w-3 h-3 text-blue-400 flex-shrink-0" />
                           <span className="truncate">{spec}</span>
@@ -249,8 +250,8 @@ export const RefurbishedLaptops: React.FC<RefurbishedLaptopsProps> = ({
                       className="w-full py-2 px-2.5 rounded-xl bg-[#1c1c1c] hover:bg-blue-600 text-gray-200 hover:text-white font-bold text-xs flex items-center justify-center gap-1 border border-white/10 transition-all active:scale-95"
                       id={`btn-visit-store-${prod.id}`}
                     >
-                      <span>Reserve</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <Laptop className="w-3.5 h-3.5 text-blue-400" />
+                      <span>Reserve Demo</span>
                     </button>
                   </div>
                 </div>

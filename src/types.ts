@@ -1,24 +1,26 @@
 export interface ServiceItem {
   id: string;
   title: string;
-  category: "Laptop Repair" | "PC Assembly" | "Upgrades" | "Specialized";
+  category: string;
   iconName: string;
   description: string;
-  features: string[];
+  features?: string[];
   startingPrice: string;
-  estimatedTime: string;
+  turnaround: string;
+  estimatedTime?: string;
   popular?: boolean;
   warranty: string;
-  image: string;
+  highlights?: string[];
+  image?: string;
 }
 
 export interface ProductItem {
   id: string;
   name: string;
   brand: string;
-  category: "Refurbished Laptop" | "Gaming PC" | "Component" | "Accessory";
+  category: string;
   specs: string[];
-  condition: "Brand New" | "Certified Refurbished (Grade A++)" | "Custom Built";
+  condition: string;
   mrp: string;
   offerPrice: string;
   warranty: string;
@@ -32,8 +34,10 @@ export interface ReviewItem {
   location: string;
   rating: number;
   date: string;
-  service: string;
-  text: string;
+  service?: string;
+  serviceUsed?: string;
+  text?: string;
+  comment?: string;
   verified: boolean;
 }
 

@@ -23,7 +23,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({
   const currentCase = BEFORE_AFTER_CASES[activeCaseIdx];
 
   return (
-    <section className="py-16 bg-[#050505] text-[#F0F0F0] border-b border-white/10" id="case-studies-section">
+    <section className="py-16 bg-[#050505] text-[#F0F0F0] border-b border-white/10" id="before-after-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -53,7 +53,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({
               }`}
               id={`case-tab-${idx}`}
             >
-              Case #{idx + 1}: {item.title.split(" vs ")[0]}
+              Case #{idx + 1}: {item.title.split(" vs ")[0].slice(0, 32)}...
             </button>
           ))}
         </div>
@@ -117,7 +117,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({
                 <span className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wider">
                   Case Study #{activeCaseIdx + 1}
                 </span>
-                <h3 className="text-xl font-bold text-white mt-1 leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white mt-1 leading-snug">
                   {currentCase.title}
                 </h3>
               </div>
@@ -145,18 +145,18 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <div className="bg-[#0c0c0c] p-3 rounded-2xl border border-white/10">
                   <div className="text-[10px] text-gray-400 flex items-center gap-1 font-mono">
-                    <Clock className="w-3 h-3 text-blue-400" />
+                    <Clock className="w-3.5 h-3.5 text-blue-400" />
                     Turnaround Time
                   </div>
-                  <div className="text-xs font-bold font-mono text-white mt-0.5">{currentCase.turnaround}</div>
+                  <div className="text-xs font-bold font-mono text-white mt-0.5">{currentCase.timeTaken}</div>
                 </div>
 
                 <div className="bg-[#0c0c0c] p-3 rounded-2xl border border-white/10">
                   <div className="text-[10px] text-gray-400 flex items-center gap-1 font-mono">
-                    <TrendingDown className="w-3 h-3 text-emerald-400" />
+                    <TrendingDown className="w-3.5 h-3.5 text-emerald-400" />
                     Customer Advantage
                   </div>
-                  <div className="text-xs font-bold font-mono text-emerald-400 mt-0.5">{currentCase.savings}</div>
+                  <div className="text-xs font-bold font-mono text-emerald-400 mt-0.5">{currentCase.costSaved}</div>
                 </div>
               </div>
 
@@ -166,8 +166,8 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({
                 className="w-full py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 transition-transform active:scale-95 mt-2"
                 id="case-book-btn"
               >
-                <span>Have a similar issue with your laptop?</span>
-                <strong className="text-white">Book Free Inspection →</strong>
+                <span>Have a similar issue?</span>
+                <strong className="text-white">Book Free Counter Inspection →</strong>
               </button>
             </div>
 

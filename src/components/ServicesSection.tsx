@@ -15,7 +15,7 @@ import {
   Clock, 
   Check, 
   Sparkles, 
-  ArrowRight,
+  ArrowRight, 
   Phone
 } from "lucide-react";
 import { ServiceItem } from "../types";
@@ -87,94 +87,98 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredServices.map((service) => (
-            <div 
-              key={service.id}
-              className="group bg-[#111111] rounded-3xl border border-white/10 hover:border-blue-500/40 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-blue-950/30 relative overflow-hidden"
-              id={`service-card-${service.id}`}
-            >
-              {service.popular && (
-                <div className="absolute top-0 right-0 bg-blue-600 text-[10px] font-mono font-black uppercase px-3 py-1 rounded-bl-2xl text-white shadow">
-                  Most Requested
-                </div>
-              )}
-
-              <div>
-                {/* Header with Icon & Category */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-blue-400 flex items-center justify-center group-hover:scale-105 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
-                    {getIcon(service.iconName)}
+          {filteredServices.map((service) => {
+            const featureList = service.features || service.highlights || [];
+            const turnaroundTime = service.turnaround || service.estimatedTime || "Same Day";
+            return (
+              <div 
+                key={service.id}
+                className="group bg-[#111111] rounded-3xl border border-white/10 hover:border-blue-500/40 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-blue-950/30 relative overflow-hidden"
+                id={`service-card-${service.id}`}
+              >
+                {service.popular && (
+                  <div className="absolute top-0 right-0 bg-blue-600 text-[10px] font-mono font-black uppercase px-3 py-1 rounded-bl-2xl text-white shadow">
+                    Most Requested
                   </div>
-                  <div>
-                    <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
-                      {service.category}
-                    </span>
-                    <h3 className="text-base font-bold text-white group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
+                )}
 
-                {/* Description */}
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                  {service.description}
-                </p>
-
-                {/* Features list */}
-                <div className="space-y-2 mb-6 bg-[#0c0c0c] p-3 rounded-2xl border border-white/5">
-                  {service.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-gray-300">
-                      <Check className="w-3.5 h-3.5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>{feat}</span>
+                <div>
+                  {/* Header with Icon & Category */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-blue-400 flex items-center justify-center group-hover:scale-105 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+                      {getIcon(service.iconName)}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Card Footer with Price, Time & CTA */}
-              <div className="pt-4 border-t border-white/10 space-y-3">
-                <div className="flex items-center justify-between text-xs">
-                  <div>
-                    <span className="text-[10px] text-gray-400">Starting From</span>
-                    <div className="text-base font-black text-blue-400 font-mono">{service.startingPrice}</div>
+                    <div>
+                      <span className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">
+                        {service.category}
+                      </span>
+                      <h3 className="text-base font-bold text-white group-hover:text-blue-400 transition-colors">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-[10px] text-gray-400 flex items-center justify-end gap-1">
-                      <Clock className="w-3 h-3 text-blue-400" />
-                      Turnaround
-                    </span>
-                    <div className="text-xs font-mono font-bold text-gray-200">{service.estimatedTime}</div>
+
+                  {/* Description */}
+                  <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+
+                  {/* Features list */}
+                  <div className="space-y-2 mb-6 bg-[#0c0c0c] p-3 rounded-2xl border border-white/5">
+                    {featureList.map((feat, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs text-gray-300">
+                        <Check className="w-3.5 h-3.5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => onSelectService(service)}
-                    className="flex-1 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/20 transition-all active:scale-95"
-                    id={`book-service-${service.id}`}
-                  >
-                    <Wrench className="w-3.5 h-3.5" />
-                    Book Service
-                  </button>
+                {/* Card Footer with Price, Time & CTA */}
+                <div className="pt-4 border-t border-white/10 space-y-3">
+                  <div className="flex items-center justify-between text-xs">
+                    <div>
+                      <span className="text-[10px] text-gray-400">Starting From</span>
+                      <div className="text-base font-black text-blue-400 font-mono">{service.startingPrice}</div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[10px] text-gray-400 flex items-center justify-end gap-1">
+                        <Clock className="w-3 h-3 text-blue-400" />
+                        Turnaround
+                      </span>
+                      <div className="text-xs font-mono font-bold text-gray-200">{turnaroundTime}</div>
+                    </div>
+                  </div>
 
-                  <button
-                    onClick={() => onOpenDiagnostic(service.title)}
-                    className="p-2.5 rounded-full bg-[#1a1a1a] hover:bg-[#252525] text-blue-400 hover:text-blue-300 border border-white/10 transition-colors"
-                    title="Estimate with AI"
-                    id={`ai-estimate-${service.id}`}
-                  >
-                    <Sparkles className="w-4 h-4" />
-                  </button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => onSelectService(service)}
+                      className="flex-1 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/20 transition-all active:scale-95"
+                      id={`book-service-${service.id}`}
+                    >
+                      <Wrench className="w-3.5 h-3.5" />
+                      Book Service
+                    </button>
+
+                    <button
+                      onClick={() => onOpenDiagnostic(service.title)}
+                      className="p-2.5 rounded-full bg-[#1a1a1a] hover:bg-[#252525] text-blue-400 hover:text-blue-300 border border-white/10 transition-colors"
+                      title="Estimate with AI"
+                      id={`ai-estimate-${service.id}`}
+                    >
+                      <Sparkles className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="text-[10px] font-mono text-gray-400 text-center flex items-center justify-center gap-1">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                    <span>{service.warranty}</span>
+                  </div>
                 </div>
 
-                <div className="text-[10px] font-mono text-gray-400 text-center flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                  <span>{service.warranty}</span>
-                </div>
               </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Emergency Help Bento Banner */}
@@ -198,16 +202,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               id="emergency-call-btn"
             >
               <Phone className="w-4 h-4 text-blue-600" />
-              Call: {STORE_INFO.phone}
+              <span>Call: {STORE_INFO.phone}</span>
             </a>
 
             <button
               onClick={() => onOpenDiagnostic()}
-              className="px-5 py-3 rounded-full bg-[#161616] hover:bg-[#222] text-white font-bold text-xs sm:text-sm border border-white/10 flex items-center gap-2 transition-colors"
-              id="emergency-ai-check-btn"
+              className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-transform active:scale-95"
+              id="emergency-ai-btn"
             >
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              Run AI Diagnostic
+              <Sparkles className="w-4 h-4" />
+              <span>Free AI Cost Estimator</span>
             </button>
           </div>
         </div>

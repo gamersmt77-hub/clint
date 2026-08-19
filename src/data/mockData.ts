@@ -1,4 +1,8 @@
 import { ServiceItem, ProductItem, ReviewItem } from "../types";
+import heroPcBanner from "../assets/images/hero_pc_banner_1787121523023.jpg";
+import refurbishedBanner from "../assets/images/refurbished_laptops_banner_1787121547485.jpg";
+import chipRepairLab from "../assets/images/chip_repair_lab_1787121576129.jpg";
+import storeHardwareShelf from "../assets/images/store_hardware_shelf_1787121598344.jpg";
 
 export const STORE_INFO = {
   name: "NEXT GEN COMPUTER",
@@ -38,7 +42,7 @@ export const HERO_BANNERS: BannerItem[] = [
     badge: "⚡ MD Computers Style Deals",
     ctaText: "Configure Your PC",
     ctaAction: "pc-builder",
-    image: "/src/assets/images/hero_pc_banner_1787121523023.jpg",
+    image: heroPcBanner,
     tag: "From ₹32,000 to ₹4 Lakhs"
   },
   {
@@ -48,7 +52,7 @@ export const HERO_BANNERS: BannerItem[] = [
     badge: "🔥 Grade A++ Clearance",
     ctaText: "Explore Laptops",
     ctaAction: "refurbished",
-    image: "/src/assets/images/refurbished_laptops_banner_1787121547485.jpg",
+    image: refurbishedBanner,
     tag: "Starts @ ₹14,999 Only"
   },
   {
@@ -58,7 +62,7 @@ export const HERO_BANNERS: BannerItem[] = [
     badge: "🔬 Precision Hardware Lab",
     ctaText: "Book Free Diagnostic",
     ctaAction: "repair",
-    image: "/src/assets/images/chip_repair_lab_1787121576129.jpg",
+    image: chipRepairLab,
     tag: "90-Day Lab Warranty"
   }
 ];
@@ -94,182 +98,71 @@ export const HARDWARE_CATEGORIES: CategoryCard[] = [
     name: "Refurbished Laptops",
     itemCount: "40+ In Stock",
     icon: "Laptop",
-    image: "/src/assets/images/refurbished_laptops_banner_1787121547485.jpg",
+    image: refurbishedBanner,
     popularItem: "Dell Latitude / ThinkPad / MacBook"
   },
   {
     id: "motherboards",
-    name: "Motherboards & ICs",
-    itemCount: "45+ Models",
+    name: "Motherboards",
+    itemCount: "22+ Chipsets",
     icon: "Layers",
-    image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500&q=80",
-    popularItem: "B760 / B650 / Z790 Gaming Boards"
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80",
+    popularItem: "B760M / B650 Gaming Wi-Fi"
   },
   {
     id: "storage-ram",
-    name: "NVMe SSDs & DDR5 RAM",
+    name: "NVMe SSDs & RAM",
     itemCount: "50+ SKUs",
     icon: "HardDrive",
-    image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=80",
-    popularItem: "1TB Gen4 NVMe (7000MB/s)"
+    image: "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=500&q=80",
+    popularItem: "Crucial P3 Plus 1TB / 32GB DDR5"
   },
   {
-    id: "cabinets-cooling",
-    name: "Gaming Cases & Coolers",
-    itemCount: "25+ Cases",
+    id: "custom-gaming-pcs",
+    name: "Pre-Built Gaming PCs",
+    itemCount: "12+ Configurations",
+    icon: "Gamepad2",
+    image: heroPcBanner,
+    popularItem: "Esports i5 + RTX 4060 Builds"
+  },
+  {
+    id: "pc-cabinets-psu",
+    name: "Cabinets & SMPS",
+    itemCount: "30+ Cases",
     icon: "Box",
-    image: "/src/assets/images/hero_pc_banner_1787121523023.jpg",
-    popularItem: "Panoramic Glass ARGB Cases"
+    image: storeHardwareShelf,
+    popularItem: "Ant Esports ARGB & Corsair 750W"
   },
   {
-    id: "power-supplies",
-    name: "Power Supplies (SMPS)",
-    itemCount: "20+ Units",
-    icon: "BatteryCharging",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80",
-    popularItem: "650W / 750W 80+ Gold Modular"
-  },
-  {
-    id: "repair-services",
-    name: "Chip-Level Repairs",
-    itemCount: "Same-Day Fix",
+    id: "chip-level-repairs",
+    name: "Chip-Level Repair",
+    itemCount: "All Brands",
     icon: "Wrench",
-    image: "/src/assets/images/chip_repair_lab_1787121576129.jpg",
-    popularItem: "BGA Reballing & Display Fix"
+    image: chipRepairLab,
+    popularItem: "BGA Reballing & Screen Swaps"
   }
 ];
 
 export const BRAND_LOGOS = [
-  { name: "Intel", tag: "Core i3/i5/i7/i9" },
-  { name: "AMD", tag: "Ryzen 5/7/9" },
-  { name: "NVIDIA", tag: "GeForce RTX" },
-  { name: "ASUS ROG", tag: "Motherboards & GPUs" },
-  { name: "Gigabyte", tag: "AORUS Series" },
-  { name: "MSI", tag: "Gaming Hardware" },
-  { name: "Corsair", tag: "RAM & Coolers" },
-  { name: "Western Digital", tag: "Black Gen4 SSDs" },
-  { name: "Kingston", tag: "Fury Beast DDR5" },
-  { name: "Crucial", tag: "T500 / P3 Plus" },
-  { name: "Dell", tag: "Latitude & Alienware" },
-  { name: "Lenovo", tag: "ThinkPad & Legion" },
-  { name: "HP", tag: "EliteBook & Omen" },
-  { name: "Apple", tag: "MacBook Pro / Air" }
-];
-
-export const SERVICES_DATA: ServiceItem[] = [
-  {
-    id: "chip-level-repair",
-    title: "Chip-Level Motherboard Repair",
-    category: "Laptop Repair",
-    iconName: "Cpu",
-    description: "Laser microscopic circuit repair, BGA IC reballing, VRM power short troubleshooting, and dead laptop motherboard restoration.",
-    features: [
-      "No Power / Dead laptop revival",
-      "Short-circuit tracing with IR thermal camera",
-      "BGA GPU / Southbridge chip reballing",
-      "Liquid & water spill recovery specialist"
-    ],
-    startingPrice: "₹850",
-    estimatedTime: "Same Day / 24 hrs",
-    popular: true,
-    warranty: "90 Days Replacement Warranty",
-    image: "/src/assets/images/chip_repair_lab_1787121576129.jpg"
-  },
-  {
-    id: "screen-replacement",
-    title: "Display & Screen Replacement",
-    category: "Laptop Repair",
-    iconName: "Monitor",
-    description: "100% Genuine FHD, 2K, 4K, 144Hz & 165Hz IPS gaming laptop screens for Dell, HP, Lenovo, ASUS, Acer, Apple MacBook.",
-    features: [
-      "Ultra-fast 30-Minute Screen Replacement",
-      "Zero Dead Pixel Guarantee",
-      "All sizes: 13.3\", 14.0\", 15.6\", 16.0\", 17.3\"",
-      "Free display cable & hinge alignment"
-    ],
-    startingPrice: "₹2,400",
-    estimatedTime: "30 - 45 Minutes",
-    popular: true,
-    warranty: "6 Months Brand Warranty",
-    image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "gaming-pc-builder",
-    title: "Custom PC Building & Gaming Rigs",
-    category: "PC Assembly",
-    iconName: "Gamepad2",
-    description: "Custom workstation & gaming battlestation builds with custom liquid cooling, ARGB sync, cable management and stress-testing.",
-    features: [
-      "Custom spec matching for budget ₹30K to ₹4 Lakhs",
-      "Deepcool & Corsair AIO liquid cooling setup",
-      "Overclocking & Cinebench / FurMark thermal stress test",
-      "Free Genuine OS & Essential Game Launchers"
-    ],
-    startingPrice: "₹1,500 (Assembly) / Rigs from ₹32,000",
-    estimatedTime: "2 - 4 Hours",
-    popular: true,
-    warranty: "3 Years On-Site Component Warranty",
-    image: "/src/assets/images/hero_pc_banner_1787121523023.jpg"
-  },
-  {
-    id: "speed-upgrade",
-    title: "SSD & RAM Superfast Upgrades",
-    category: "Upgrades",
-    iconName: "Zap",
-    description: "Make your 5-year-old slow laptop 10x faster with Gen4 NVMe M.2 SSDs and high-frequency dual-channel DDR4/DDR5 RAM.",
-    features: [
-      "10-second instant Windows bootup guaranteed",
-      "100% safe data clone (all your files & apps intact)",
-      "Crucial, Kingston, Samsung, WD high-speed drives",
-      "Free comprehensive hardware health check"
-    ],
-    startingPrice: "₹1,250 (512GB NVMe M.2)",
-    estimatedTime: "20 - 30 Minutes",
-    popular: true,
-    warranty: "3 to 5 Years Manufacturer Warranty",
-    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "battery-adapter",
-    title: "Original Battery & Adapter Replacement",
-    category: "Laptop Repair",
-    iconName: "BatteryCharging",
-    description: "Original OEM battery packs and high-wattage power bricks (65W, 135W, 230W, Type-C 100W PD) for all major laptop brands.",
-    features: [
-      "Original Grade-A Lithium-ion cells",
-      "Up to 4-7 hours real backup guarantee",
-      "Surge-protected original laptop chargers",
-      "Tested for overcharge & thermal safety"
-    ],
-    startingPrice: "₹1,450",
-    estimatedTime: "Instant (Ready in Stock)",
-    warranty: "1 Year Replacement Warranty",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "hinge-body-repair",
-    title: "Hinge Fabrication & Body Repair",
-    category: "Laptop Repair",
-    iconName: "Wrench",
-    description: "Precision metal bracket reinforcement for broken laptop hinges, cracked palmrests, loose screen bezels, and corner falls.",
-    features: [
-      "Heavy-duty industrial resin & metal bracket weld",
-      "Smooth one-finger lid opening restoration",
-      "Prevents display screen pressure damage",
-      "Saves expensive top-cover replacement cost"
-    ],
-    startingPrice: "₹650",
-    estimatedTime: "1 - 2 Hours",
-    warranty: "6 Months Structural Warranty",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
-  }
+  { name: "Intel", tag: "Core i3 / i5 / i7 / i9 14th Gen" },
+  { name: "AMD", tag: "Ryzen 5000 / 7000 / 9000 Series" },
+  { name: "NVIDIA", tag: "GeForce RTX 4060 / 4070 / 4080" },
+  { name: "ASUS ROG", tag: "TUF Gaming & Motherboards" },
+  { name: "Gigabyte", tag: "AORUS & Ultra Durable Series" },
+  { name: "MSI", tag: "Gaming Laptops & Components" },
+  { name: "Corsair", tag: "Vengeance RAM & Gold PSUs" },
+  { name: "Western Digital", tag: "Black SN850X & Blue NVMe" },
+  { name: "Crucial", tag: "Micron P3 Plus Gen4 SSDs" },
+  { name: "Lenovo", tag: "ThinkPad Corporate Laptops" },
+  { name: "Dell", tag: "Latitude & Inspiron Specialists" },
+  { name: "Apple", tag: "MacBook Pro / Air Certified Repairs" },
 ];
 
 export interface StoreProduct {
   id: string;
   name: string;
   brand: string;
-  category: "all" | "deals" | "laptops" | "gaming-pc" | "components" | "upgrades";
+  category: "laptops" | "gaming-pc" | "components" | "accessories" | "repair";
   specs: string[];
   mrp: string;
   offerPrice: string;
@@ -277,24 +170,24 @@ export interface StoreProduct {
   stockStatus: "In Stock" | "Few Units Left" | "Hot Seller";
   warranty: string;
   image: string;
-  badge: string;
+  badge?: string;
   rating: number;
 }
 
 export const ALL_STORE_PRODUCTS: StoreProduct[] = [
   {
     id: "prod-1",
-    name: "Dell Latitude 7400 Carbon Ultra-Slim",
+    name: "Dell Latitude 7400 Carbon Edition Ultrabook",
     brand: "Dell",
     category: "laptops",
-    specs: ["Intel Core i7-8665U (4.8 GHz)", "16GB DDR4 RAM", "512GB Fast NVMe SSD", "14.0\" FHD Anti-Glare IPS", "Backlit Keyboard + Fingerprint"],
+    specs: ["Intel Core i7-8665U (Up to 4.8 GHz)", "16GB DDR4 RAM High-Speed", "512GB Ultra-Fast NVMe SSD", "14.0\" FHD Anti-Glare IPS Display", "Backlit Keyboard + Fingerprint Sensor"],
     mrp: "₹89,990",
     offerPrice: "₹24,500",
-    discountPercent: "72% OFF",
+    discountPercent: "73% OFF",
     stockStatus: "In Stock",
-    warranty: "6 Months Shop Warranty",
-    image: "/src/assets/images/refurbished_laptops_banner_1787121547485.jpg",
-    badge: "🔥 Best for Coding & Office",
+    warranty: "6 Months Shop Warranty + 1 Year Support",
+    image: refurbishedBanner,
+    badge: "🔥 Patna Bestseller for Students & Coders",
     rating: 4.9
   },
   {
@@ -338,7 +231,7 @@ export const ALL_STORE_PRODUCTS: StoreProduct[] = [
     discountPercent: "19% OFF",
     stockStatus: "Hot Seller",
     warranty: "3 Years Brand Warranty on Parts",
-    image: "/src/assets/images/hero_pc_banner_1787121523023.jpg",
+    image: heroPcBanner,
     badge: "🚀 1080p / 1440p Esports King",
     rating: 5.0
   },
@@ -415,7 +308,7 @@ export const REFURBISHED_PRODUCTS: ProductItem[] = [
     mrp: "₹89,990",
     offerPrice: "₹24,500",
     warranty: "6 Months Shop Warranty + 1 Year Tech Support",
-    image: "/src/assets/images/refurbished_laptops_banner_1787121547485.jpg",
+    image: refurbishedBanner,
     badge: "Bestseller for Students & Coding"
   },
   {
@@ -449,114 +342,241 @@ export const REFURBISHED_PRODUCTS: ProductItem[] = [
     name: "NextGen Beast RTX 4060 Gaming Battlestation",
     brand: "NextGen Custom",
     category: "Gaming PC",
-    specs: ["Intel Core i5-12400F 6-Core", "NVIDIA GeForce RTX 4060 8GB OC", "16GB 3600MHz RGB RAM", "1TB Gen4 NVMe (4500MB/s)", "650W 80+ Bronze Certified PSU", "Panoramic Tempered Glass ARGB Case"],
-    condition: "Brand New",
-    mrp: "₹82,000",
+    specs: ["Intel Core i5-12400F 6-Core", "NVIDIA RTX 4060 8GB GDDR6", "16GB 3600MHz RGB RAM", "1TB Gen4 NVMe (5000 MB/s)", "650W 80+ Bronze PSU", "ARGB Tempered Glass Case"],
+    condition: "Brand New Custom Assembly",
+    mrp: "₹84,000",
     offerPrice: "₹67,999",
-    warranty: "3 Years Brand Warranty on Components",
-    image: "/src/assets/images/hero_pc_banner_1787121523023.jpg",
-    badge: "1080p Ultra / 1440p Esports King"
+    warranty: "3 Years Brand Warranty",
+    image: heroPcBanner,
+    badge: "⚡ Esports 240+ FPS Ready"
   }
 ];
 
-export const REVIEWS_DATA: ReviewItem[] = [
+export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: "rev-1",
-    author: "Alok Srivastava",
-    location: "Fraser Road, Patna",
-    rating: 5,
-    date: "1 week ago",
-    service: "Dell Gaming Motherboard Chip Repair",
-    text: "Dell service center asked ₹14,000 to replace the entire motherboard for my G15. Next Gen Computer at Hariniwas complex diagnosed a shorted charging MOSFET and fixed it within 4 hours for just ₹1,650! Running cool since 3 weeks. Genuine honesty and great technical skills.",
-    verified: true
+    id: "srv-01",
+    title: "Chip-Level Motherboard Repair",
+    category: "Laptop Repair",
+    description: "Laser microscopic inspection, short circuit tracing, BGA reballing, power IC replacement, and corrupted BIOS reprogramming.",
+    startingPrice: "₹1,200",
+    turnaround: "Same Day / 24-48 Hrs",
+    warranty: "90-Day Guarantee",
+    iconName: "Cpu",
+    popular: true,
+    highlights: ["Advanced German Soldering Station", "No Fix - No Fee Policy", "Original IC Replacements"]
   },
   {
-    id: "rev-2",
-    author: "Ritu Raj Singh",
-    location: "Kankarbagh, Patna",
-    rating: 5,
-    date: "2 weeks ago",
-    service: "Custom Editing PC Build (Ryzen 7 + RTX 4070)",
-    text: "Best computer shop in Patna for custom PC builds! Got all parts at competitive Nehru Place Delhi rates right here in Dak Bunglow. They did immaculate cable management and installed Windows 11 with all drivers for free. Highly recommended!",
-    verified: true
+    id: "srv-02",
+    title: "Display & Screen Replacement",
+    category: "Laptop Repair",
+    description: "FHD, IPS, OLED, and 144Hz/240Hz gaming display replacement. Free dust cleaning and hinge greasing included.",
+    startingPrice: "₹2,200",
+    turnaround: "30 - 45 Minutes",
+    warranty: "6 Months Warranty",
+    iconName: "Monitor",
+    popular: true,
+    highlights: ["100% Brand New Grade-A Panels", "Zero Dead Pixel Guarantee", "Express 30-Min Fitting"]
   },
   {
-    id: "rev-3",
-    author: "Manish Sinha",
-    location: "Boring Road, Patna",
-    rating: 5,
-    date: "3 weeks ago",
-    service: "MacBook Air Water Spill & Screen Repair",
-    text: "Tea spilled on my MacBook Air M1. Other shops said it's dead. The engineers at Next Gen opened it, ultrasonic cleaned the logic board, replaced two SMD resistors, and restored it completely with all my files safe. 10/10 service!",
-    verified: true
+    id: "srv-03",
+    title: "Custom Gaming & Workstation Assembly",
+    category: "PC Assembly",
+    description: "Budget & high-end PC builds with custom liquid cooling, professional cable routing, thermal paste application, and stress testing.",
+    startingPrice: "₹1,500",
+    turnaround: "Same Day Ready",
+    warranty: "Lifetime Build Support",
+    iconName: "Zap",
+    popular: true,
+    highlights: ["Cinebench & Furmark Tested", "Zero Cable Clutter", "Official GST Invoice"]
   },
   {
-    id: "rev-4",
-    author: "Dr. Ananya Mishra",
-    location: "Bailey Road, Patna",
-    rating: 5,
-    date: "1 month ago",
-    service: "Refurbished ThinkPad Purchase & SSD Upgrade",
-    text: "Bought a refurbished Lenovo ThinkPad for clinic accounting & research. Condition is pristine like a brand new machine, and battery gives 6 hours easily. Very polite staff and transparent bills.",
-    verified: true
+    id: "srv-04",
+    title: "High-Speed SSD & RAM Upgrades",
+    category: "Upgrades",
+    description: "Revive slow laptops with NVMe Gen4 SSDs (10x faster than HDDs) and Dual-Channel DDR4/DDR5 RAM with free OS migration.",
+    startingPrice: "₹1,450",
+    turnaround: "20 - 30 Minutes",
+    warranty: "3 to 5 Years Warranty",
+    iconName: "Flame",
+    popular: false,
+    highlights: ["Zero Data Loss Clone", "Crucial / Kingston Genuine", "Instant Speed Boost"]
+  },
+  {
+    id: "srv-05",
+    title: "Liquid Spill & Dead Laptop Revival",
+    category: "Specialized",
+    description: "Ultrasonic chemical bath PCB cleaning for tea/water damaged laptops, repairing corroded tracks and oxidised SMD components.",
+    startingPrice: "₹1,500",
+    turnaround: "24 - 48 Hours",
+    warranty: "90-Day Guarantee",
+    iconName: "BatteryCharging",
+    popular: false,
+    highlights: ["Ultrasonic PCB De-oxidation", "85%+ Recovery Success Rate", "Complete Data Preservation"]
+  },
+  {
+    id: "srv-06",
+    title: "Lost Data Recovery (HDD/SSD/NVMe)",
+    category: "Specialized",
+    description: "Cleanroom recovery from formatted drives, raw file systems, clicking hard drives, and corrupted memory cards.",
+    startingPrice: "₹1,800",
+    turnaround: "1 - 3 Days",
+    warranty: "100% Confidentiality",
+    iconName: "Database",
+    popular: false,
+    highlights: ["Class-100 Cleanroom Access", "Strict Privacy Protocol", "Pay Only If Data Recovered"]
   }
 ];
 
 export const BEFORE_AFTER_CASES = [
   {
-    id: "case-1",
-    title: "Dell XPS 15 Fractured IPS Screen vs Fresh 100% sRGB Panel",
-    category: "Screen Replacement",
-    beforeText: "Shattered glass with ink bleed and vertical black bars after accidental backpack squeeze.",
-    afterText: "Replaced with original OEM 400-nit InfinityEdge IPS display in 35 minutes. Zero dead pixels.",
-    beforeImg: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
-    afterImg: "/src/assets/images/refurbished_laptops_banner_1787121547485.jpg",
-    turnaround: "35 Minutes",
-    savings: "Saved 65% vs Authorised Center"
+    id: "case-01",
+    title: "Liquid Spilled Lenovo Legion Gaming Laptop (Short Circuit)",
+    device: "Lenovo Legion 5 Pro (Ryzen 7 + RTX 3060)",
+    beforeImg: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80",
+    afterImg: chipRepairLab,
+    beforeText: "Customer spilled coffee; motherboard shorted with 19V rail burnt. Authorized service center quoted ₹48,000 for whole motherboard replacement.",
+    afterText: "Repaired 3 shorted MOSFETs, cleaned corrosion via ultrasonic PCB bath, reprogrammed BIOS IC. Delivered working with FurMark stress test in 24 hours.",
+    costSaved: "₹38,500 Saved (Repaired for ₹3,800)",
+    timeTaken: "24 Hours"
   },
   {
-    id: "case-2",
-    title: "Burnt 19V Power Rail & Mosfet vs Precision Micro-Soldered Circuit",
-    category: "Chip-Level Repair",
-    beforeText: "Dead HP Envy x360. No power indicator LED, burnt smell, zero response to charger.",
-    afterText: "Identified blown capacitor & buck regulator IC under 40x microscope. Replaced with OEM components.",
-    beforeImg: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    afterImg: "/src/assets/images/chip_repair_lab_1787121576129.jpg",
-    turnaround: "Same Day (3.5 Hrs)",
-    savings: "Saved ₹16,000 Motherboard Swap"
+    id: "case-02",
+    title: "Crushed Hinges & Broken Display Frame on HP Pavilion",
+    device: "HP Pavilion 15 Gaming",
+    beforeImg: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+    afterImg: refurbishedBanner,
+    beforeText: "Severe corner drop caused metallic hinge to rip out of bottom plastic frame. Screen was dangling by the video ribbon cable.",
+    afterText: "Rebuilt inner anchor mounts with metal-bonding resin, calibrated hinge tension to 50% lighter opening force, fitted brand new 144Hz IPS panel.",
+    costSaved: "₹14,000 Saved (Repaired for ₹2,400)",
+    timeTaken: "45 Minutes"
   },
   {
-    id: "case-3",
-    title: "Choked 96°C Overheating Heatsink vs Clean Arctic MX-4 Setup",
-    category: "Thermal Servicing",
-    beforeText: "ASUS ROG gaming laptop thermal throttling to 15 FPS in GTA V and shutting down in 10 mins.",
-    afterText: "Ultrasonic fin cleaning + Arctic MX-4 thermal paste. Temperatures stable at 68°C under max gaming load.",
-    beforeImg: "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=600&q=80",
-    afterImg: "/src/assets/images/hero_pc_banner_1787121523023.jpg",
-    turnaround: "40 Minutes",
-    savings: "Restored 100% Gaming Performance"
+    id: "case-03",
+    title: "Overheating (102°C) Custom Gaming PC with Thermal Throttling",
+    device: "Intel Core i9 13900K + RTX 4080",
+    beforeImg: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80",
+    afterImg: heroPcBanner,
+    beforeText: "PC kept turning off during 4K video rendering and Cyberpunk 2077. Dry generic thermal paste and clogged AIO pump.",
+    afterText: "Flushed loop, installed Arctic MX-6 high-conductivity compound, re-engineered case intake/exhaust pressure. Temps dropped from 102°C to 68°C peak.",
+    costSaved: "Hardware Lifespan Doubled",
+    timeTaken: "2 Hours"
+  }
+];
+
+export const REVIEWS_DATA: ReviewItem[] = [
+  {
+    id: "rev-01",
+    author: "Vivek Anand",
+    location: "Kankarbagh, Patna",
+    rating: 5,
+    date: "3 days ago",
+    comment: "Meri Dell laptop ka display Maurya Lok ke service center wale ne bol diya ki change nahi hoga, ₹8,500 mang rahe the. Next Gen Computer pe Bhaiya ne sirf 30 minutes me ₹2,600 me original IPS screen laga di with 6 months warranty! Best shop in Patna.",
+    serviceUsed: "Dell Screen Replacement",
+    verified: true
+  },
+  {
+    id: "rev-02",
+    author: "Dr. Alok Ranjan",
+    location: "Bailey Road, Patna",
+    rating: 5,
+    date: "1 week ago",
+    comment: "Got a refurbished ThinkPad T480 from Next Gen Computer for my clinic records. Laptop is literally in brand new condition, battery gives 6+ hours backup. Very genuine pricing and clean billing.",
+    serviceUsed: "Refurbished ThinkPad Purchase",
+    verified: true
+  },
+  {
+    id: "rev-03",
+    author: "Rohan Kumar (Gamers Arena)",
+    location: "Boring Road, Patna",
+    rating: 5,
+    date: "2 weeks ago",
+    comment: "Built my full gaming rig (Ryzen 7 7800X3D + RTX 4070 Ti) from Next Gen. Pricing was lower than MD Computers and Nehru Place Delhi, plus they did clean cable management and BIOS tuning for free right in front of me.",
+    serviceUsed: "Custom Gaming PC Assembly",
+    verified: true
+  },
+  {
+    id: "rev-04",
+    author: "Sneha Sinha",
+    location: "Fraser Road, Patna",
+    rating: 5,
+    date: "3 weeks ago",
+    comment: "My MacBook Air had water damage and was completely dead. Next Gen engineers did micro-soldering and saved all my college project files within 24 hours. Genuine saviors in Hariniwas Complex!",
+    serviceUsed: "MacBook Chip-Level Repair",
+    verified: true
   }
 ];
 
 export const FAQS = [
   {
-    q: "Where is NEXT GEN COMPUTER located in Patna?",
-    a: "We are centrally located at Shop No. 207, 2nd Floor, Hariniwas Complex, New Dak Bunglow Road, Fraser Road Area, Patna, Bihar 800001 (Just 1 minute walk from Dak Bunglow Chauraha, right opposite Maurya Lok area)."
+    question: "Where is NEXT GEN COMPUTER located in Patna?",
+    answer: "We are located at Shop 207, 2nd Floor, Hariniwas Complex, New Dak Bunglow Road, Fraser Road Area, Patna, Bihar 800001 (Near Dak Bunglow Chauraha, right opposite Maurya Lok)."
   },
   {
-    q: "How fast can you replace a broken laptop screen or upgrade SSD?",
-    a: "We stock 95% of screen panels (14.0\", 15.6\", 120Hz/144Hz IPS) and NVMe SSDs in-store. Standard screen replacements and SSD/RAM upgrades are completed within 30 to 45 minutes right in front of you."
+    question: "Do you offer warranty on laptop repairs and refurbished laptops?",
+    answer: "Yes! All chip-level motherboard repairs come with 90-day lab warranty. Screen and battery replacements carry up to 6 months warranty. All refurbished laptops (Dell, ThinkPad, HP, MacBook) are backed by 6 months shop replacement warranty."
   },
   {
-    q: "Do you repair dead laptops that official service centers rejected?",
-    a: "Yes! Authorized brand centers usually only swap entire costly motherboards. At NEXT GEN COMPUTER, our master technicians specialize in chip-level circuit diagnosis, micro-soldering, and BGA reballing, saving you 60-80% of costs."
+    question: "How long does a laptop screen or battery replacement take?",
+    answer: "Most popular Dell, HP, Lenovo, and ASUS screen and battery replacements are completed in just 30 to 45 minutes right in front of you at our Hariniwas Complex store."
   },
   {
-    q: "Do you offer warranty on repairs and refurbished laptops?",
-    a: "Absolutely. All chip-level repairs come with a transparent 90-day testing warranty, new replacement parts carry 6 to 12 months warranty, and our certified refurbished business laptops include up to 6 months shop warranty plus lifetime tech support."
+    question: "Can I customize a Gaming PC or Workstation based on my budget?",
+    answer: "Absolutely! We provide live PC building assistance where you choose your CPU, GPU, RAM, Cabinet, and Liquid Cooler. We assemble, cable-manage, and benchmark test with official brand warranties."
   },
   {
-    q: "Can I customize a Gaming or Video Editing PC within my budget?",
-    a: "Yes! Use our live PC Builder on this website or visit our Hariniwas Complex store. We build customized rigs for Valorant, GTA V, CS2, AutoCAD, 4K Premiere Pro, Blender 3D, and AI machine learning with competitive Delhi/Nehru Place wholesale pricing."
+    question: "What is your 'No Fix - No Fee' policy?",
+    answer: "If our chip-level engineers are unable to repair your dead motherboard or recover your data, we charge ₹0 diagnostic fee. You only pay when your device is fully fixed and verified by you."
+  }
+];
+
+export interface MockBooking {
+  id: string;
+  name: string;
+  phone: string;
+  serviceType: string;
+  deviceModel: string;
+  issueDescription: string;
+  urgent: boolean;
+  status: "Received" | "Diagnosing" | "In-Progress" | "Ready for Pickup" | "Delivered";
+  createdAt: string;
+  estimatedCost: string;
+}
+
+export const INITIAL_MOCK_BOOKINGS: MockBooking[] = [
+  {
+    id: "NGC-9842",
+    name: "Rahul Verma",
+    phone: "9835291073",
+    serviceType: "Chip-Level Motherboard Repair",
+    deviceModel: "Dell Inspiron 15 5000",
+    issueDescription: "No power, charging light blinking orange, liquid spill",
+    urgent: true,
+    status: "Ready for Pickup",
+    createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
+    estimatedCost: "₹1,850",
+  },
+  {
+    id: "NGC-9843",
+    name: "Amit Kumar Sharma",
+    phone: "9431000000",
+    serviceType: "Gaming Rig Assembly & Liquid Cooling",
+    deviceModel: "Custom Ryzen 7 7800X3D + RTX 4070 Ti Super",
+    issueDescription: "Assembly, Cable management & Stress benchmark testing",
+    urgent: false,
+    status: "In-Progress",
+    createdAt: new Date(Date.now() - 86400000).toISOString(),
+    estimatedCost: "₹2,500",
+  },
+  {
+    id: "NGC-9844",
+    name: "Priya Singh",
+    phone: "9122000000",
+    serviceType: "Display Screen Replacement (Original 144Hz IPS)",
+    deviceModel: "ASUS TUF Gaming A15",
+    issueDescription: "Screen flickering with vertical green lines after drop",
+    urgent: false,
+    status: "Diagnosing",
+    createdAt: new Date().toISOString(),
+    estimatedCost: "₹4,200",
   }
 ];
